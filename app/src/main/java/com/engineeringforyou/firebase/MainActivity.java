@@ -22,6 +22,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.FirebaseDatabase;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
 import com.bumptech.glide.Glide;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mMessageRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
     private ProgressBar mProgressBar;
+    private Button mSendButton;
+    private String mUsername;
+    private String mPhotoUrl = "dfd";
+    private EditText mMsgEditText;
+    public static final String DEFAULT_NAME = "aleksander";
+
 
     public static class FirechatMsgViewHolder extends RecyclerView.ViewHolder {
         public TextView msgTextView;
@@ -50,12 +57,47 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mUsername = DEFAULT_NAME;
 
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mMessageRecyclerView = (RecyclerView) findViewById(R.id.messageRecyclerView);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mLinearLayoutManager.setStackFromEnd(true);
         mMessageRecyclerView.setLayoutManager(mLinearLayoutManager);
+        mMsgEditText = (EditText) findViewById(R.id.msgEditText);
+
+        mMsgEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (charSequence.toString().trim().length() > 0) {
+                    mSendButton.setEnabled(true);
+                } else {
+                    mSendButton.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
+        mSendButton = (Button) findViewById(R.id.sendButton);
+        mSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChatMessage friendlyMessage = new
+                        ChatMessage(mMsgEditText.getText().toString(),
+                        mUsername,
+                        mPhotoUrl);
+                mSimpleFirechatDatabaseReference.child("messages")
+                        .push().setValue(friendlyMessage);
+                mMsgEditText.setText("");
+            }
+        });
 
         mSimpleFirechatDatabaseReference = FirebaseDatabase.getInstance().getReference();
         mFirebaseAdapter = new FirebaseRecyclerAdapter<ChatMessage,
