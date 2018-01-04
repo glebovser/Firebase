@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "209061360823",
+    "firebase_url": "https://fir-451ac.firebaseio.com",
+    "project_id": "fir-451ac",
+    "storage_bucket": "fir-451ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209061360823:android:c78f71cac8afbac0",
+        "android_client_info": {
+          "package_name": "com.engineeringforyou.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209061360823-ef6b7h95e8h2kq08gcr6qva16joi2h3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_VZIyC2SgRsqEd_OR_r8CBMlt3bocyKA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
