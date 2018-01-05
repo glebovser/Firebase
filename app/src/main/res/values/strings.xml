@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Firebase</string>
     <string name="title_activity_chat_message">ChatMessage</string>
+    <string name="title_activity_authorization">AuthorizationActivity</string>
 </resources>

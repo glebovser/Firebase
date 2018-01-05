@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "209061360823-n5iddbm5g3u77gp81khbtsh70p3v7kvs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.engineeringforyou.firebase",
+            "certificate_hash": "c3b573671c7afb6b9d7504e093df8f796d1c27d5"
+          }
+        },
+        {
+          "client_id": "209061360823-v9pvm2vsrlmpmba1bjs96bolofgeridf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.engineeringforyou.firebase",
+            "certificate_hash": "3333f08ea2d060e608bf23bd0cf28956bc974d77"
+          }
+        },
+        {
           "client_id": "209061360823-ef6b7h95e8h2kq08gcr6qva16joi2h3u.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +45,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209061360823-ef6b7h95e8h2kq08gcr6qva16joi2h3u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
